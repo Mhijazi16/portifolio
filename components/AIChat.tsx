@@ -42,7 +42,7 @@ const AIChat: React.FC = () => {
           {/* Header */}
           <div className="bg-[#2c2c2e] p-4 flex justify-between items-center border-b border-white/5">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" /></svg>
               </div>
               <div>
@@ -60,9 +60,9 @@ const AIChat: React.FC = () => {
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div 
-                  className={`max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed ${
+                    className={`max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed ${
                     msg.role === 'user' 
-                      ? 'bg-blue-600 text-white rounded-br-none' 
+                      ? 'bg-white text-black rounded-br-none' 
                       : 'bg-[#2c2c2e] text-neutral-200 rounded-bl-none'
                   }`}
                 >
@@ -89,13 +89,13 @@ const AIChat: React.FC = () => {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about my projects..."
-                className="w-full bg-[#1c1c1e] text-white rounded-full py-3 px-4 pr-12 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 border border-white/5 placeholder-neutral-500"
+                 placeholder="Ask about my projects..."
+                 className="w-full bg-[#1c1c1e] text-white rounded-full py-3 px-4 pr-12 text-sm focus:outline-none focus:ring-1 focus:ring-white border border-white/5 placeholder-neutral-500"
               />
               <button 
-                type="submit"
-                disabled={!input.trim() || isLoading}
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-blue-600 rounded-full text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-500 transition-colors"
+                 type="submit"
+                 disabled={!input.trim() || isLoading}
+                 className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-white rounded-full text-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-neutral-200 transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </button>
@@ -114,8 +114,8 @@ const AIChat: React.FC = () => {
         ) : (
           <div className="relative">
              <span className="absolute -top-1 -right-1 flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
             </span>
              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
           </div>

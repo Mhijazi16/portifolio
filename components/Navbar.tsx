@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className="text-2xl font-bold tracking-tighter text-white cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+         <div className="text-2xl font-bold tracking-tighter text-white cursor-pointer transition-all duration-300 hover:text-neutral-200 hover:-translate-y-0.5" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           MOHAMMED<span className="text-neutral-500">.HIJAZI</span>
         </div>
         
@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             <button 
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className="hover:text-white transition-colors duration-200"
+               className="hover:text-white hover:-translate-y-0.5 transition-all duration-200"
             >
               {item}
             </button>

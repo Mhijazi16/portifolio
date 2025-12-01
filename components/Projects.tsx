@@ -1,6 +1,7 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Project } from '../types';
+import BlurText from './BlurText';
 
 const projects: Project[] = [
   {
@@ -34,12 +35,18 @@ const Projects: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Selected Work</h2>
+            <BlurText
+              text="Selected Work"
+              animateBy="letters"
+              direction="top"
+              delay={50}
+              className="text-3xl md:text-5xl font-bold text-white mb-4"
+            />
             <p className="text-neutral-400 max-w-xl">
               A curated selection of projects that demonstrate my passion for performance, design, and user experience.
             </p>
           </div>
-          <button className="hidden md:block text-white border-b border-white pb-1 hover:text-blue-400 hover:border-blue-400 transition-colors">
+           <button className="hidden md:block text-white border-b border-white pb-1 hover:text-neutral-200 hover:border-neutral-200 hover:-translate-y-0.5 transition-all duration-300">
             View Github
           </button>
         </div>
@@ -51,7 +58,7 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className={`group relative rounded-3xl overflow-hidden bg-neutral-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+               className={`group relative rounded-3xl overflow-hidden bg-neutral-900/90 border border-white/5 transition-all duration-700 group-hover:-translate-y-3 group-hover:shadow-[0_32px_80px_rgba(0,0,0,0.85)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -65,7 +72,7 @@ const Projects: React.FC = () => {
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="flex flex-wrap gap-2 mb-3">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-xs font-medium text-blue-300 bg-blue-900/30 px-2.5 py-1 rounded-full backdrop-blur-md">
+                        <span key={tag} className="text-xs font-medium text-neutral-100 bg-black/60 px-2.5 py-1 rounded-full backdrop-blur-md">
                         {tag}
                       </span>
                     ))}
