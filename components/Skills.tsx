@@ -29,7 +29,7 @@ const Skills: React.FC = () => {
 
         <div 
           ref={ref}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-[1600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           {skills.map((skill, idx) => (
             <div key={idx} className="glass-card p-6 rounded-2xl hover:bg-white/5 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(88,28,135,0.55)] hover:border-purple-500/40 transition-all duration-300">

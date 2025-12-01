@@ -7,12 +7,19 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIChat from './components/AIChat';
 import BlurText from './components/BlurText';
-
+import { useIntersectionObserver } from './hooks/useIntersectionObserver';
+ 
 // About component defined here for simplicity of the file structure requested
 const About: React.FC = () => {
+  const [aboutRef, aboutVisible] = useIntersectionObserver();
   return (
     <section id="about" className="py-24 bg-neutral-950/60">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div
+        ref={aboutRef}
+        className={`max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center transition-all duration-[1400ms] ${
+          aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        }`}
+      >
         <div className="relative">
            <div className="absolute inset-0 bg-white blur-[100px] opacity-10 rounded-full"></div>
           <img 

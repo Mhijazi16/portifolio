@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24 bg-black/40 border-t border-neutral-900">
       <div className="max-w-4xl mx-auto px-6 text-center">
-          <div ref={ref} className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div ref={ref} className={`transition-all duration-[1600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <BlurText
             text="Let's build something extraordinary."
             animateBy="words"

@@ -1,10 +1,14 @@
 import React from 'react';
 import GradientBlinds from './GradientBlinds';
 import BlurText from './BlurText';
-
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+ 
 const Hero: React.FC = () => {
+  const [heroRef, heroVisible] = useIntersectionObserver();
+ 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black/40 pt-28 pb-10">
+
       {/* Background Ambience */}
        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-white/5 rounded-full blur-[140px] mix-blend-screen opacity-40 pointer-events-none"></div>
 
@@ -44,7 +48,12 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Text Content */}
-        <div className="text-center max-w-3xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div
+          ref={heroRef}
+          className={`text-center max-w-3xl transition-all duration-[1400ms] ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/20 text-xs font-medium text-neutral-200 mb-6 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-50"></span>

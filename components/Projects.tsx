@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
-               className={`group relative rounded-3xl overflow-hidden bg-neutral-900/90 border border-white/5 transition-all duration-700 group-hover:-translate-y-3 group-hover:shadow-[0_32px_80px_rgba(0,0,0,0.85)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+               className={`group relative rounded-3xl overflow-hidden bg-neutral-900/90 border border-white/5 transition-all duration-[1400ms] group-hover:-translate-y-3 group-hover:shadow-[0_32px_80px_rgba(0,0,0,0.85)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="aspect-[4/3] overflow-hidden">
