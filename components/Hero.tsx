@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
             animateBy="letters"
             direction="top"
             delay={80}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight text-center"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight text-center justify-center"
           />
           
           <BlurText
@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
             animateBy="letters"
             direction="top"
             delay={80}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight text-center"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight text-center justify-center"
           />
           <p className="text-lg text-neutral-400 max-w-xl mx-auto mb-10 leading-relaxed">
             I am a Software Engineer focused on FastAPI, React, and AI-powered systems, building reliable experiences across the stack.

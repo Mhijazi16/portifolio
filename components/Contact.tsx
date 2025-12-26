@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
             animateBy="words"
             direction="bottom"
             delay={90}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance"
+            className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance justify-center"
           />
 
           <p className="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto">
