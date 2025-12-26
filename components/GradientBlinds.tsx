@@ -63,8 +63,6 @@ const GradientBlinds: React.FC<GradientBlindsProps> = ({
   const meshRef = useRef<Mesh<Triangle> | null>(null);
   const geometryRef = useRef<Triangle | null>(null);
   const rendererRef = useRef<Renderer | null>(null);
-  const mouseTargetRef = useRef<[number, number]>([0, 0]);
-  const lastTimeRef = useRef<number>(0);
   const firstResizeRef = useRef<boolean>(true);
 
   useEffect(() => {
@@ -288,7 +286,6 @@ void main() {
         const cx = gl.drawingBufferWidth / 2;
         const cy = gl.drawingBufferHeight / 2;
         uniforms.iMouse.value = [cx, cy];
-        mouseTargetRef.current = [cx, cy];
       }
     };
 
@@ -296,41 +293,22 @@ void main() {
     const ro = new ResizeObserver(resize);
     ro.observe(container);
 
-    const onPointerMove = (e: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      const scale = (renderer as unknown as { dpr?: number }).dpr || 1;
-      let x = (e.clientX - rect.left) * scale;
-      let y = (rect.height - (e.clientY - rect.top)) * scale;
-
-      const maxX = rect.width * scale;
-      const maxY = rect.height * scale;
-      x = Math.max(0, Math.min(maxX, x));
-      y = Math.max(0, Math.min(maxY, y));
-
-      mouseTargetRef.current = [x, y];
-      if (mouseDampening <= 0) {
-        uniforms.iMouse.value = [x, y];
-      }
-    };
-    window.addEventListener('pointermove', onPointerMove);
 
     const loop = (t: number) => {
       rafRef.current = requestAnimationFrame(loop);
       uniforms.iTime.value = t * 0.001;
-      if (mouseDampening > 0) {
-        if (!lastTimeRef.current) lastTimeRef.current = t;
-        const dt = (t - lastTimeRef.current) / 1000;
-        lastTimeRef.current = t;
-        const tau = Math.max(1e-4, mouseDampening);
-        let factor = 1 - Math.exp(-dt / tau);
-        if (factor > 1) factor = 1;
-        const target = mouseTargetRef.current;
-        const cur = uniforms.iMouse.value;
-        cur[0] += (target[0] - cur[0]) * factor;
-        cur[1] += (target[1] - cur[1]) * factor;
-      } else {
-        lastTimeRef.current = t;
-      }
+
+      // Make the spotlight gently float up and down around center
+      const time = uniforms.iTime.value;
+      const width = gl.drawingBufferWidth;
+      const height = gl.drawingBufferHeight;
+      const centerX = width * 0.6; // slightly to the right
+      const centerY = height / 2;
+      const amplitude = height * 0.15; // 15% of height
+      const speed = 0.18; // slower cycles per second
+      const offsetY = Math.sin(time * 2 * Math.PI * speed) * amplitude;
+      uniforms.iMouse.value = [centerX, centerY + offsetY];
+
       if (!paused && programRef.current && meshRef.current) {
         try {
           renderer.render({ scene: meshRef.current });
@@ -343,7 +321,6 @@ void main() {
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      window.removeEventListener('pointermove', onPointerMove);
       ro.disconnect();
       if (canvas.parentElement === container) {
         container.removeChild(canvas);
@@ -370,7 +347,6 @@ void main() {
     noise,
     blindCount,
     blindMinWidth,
-    mouseDampening,
     mirrorGradient,
     spotlightRadius,
     spotlightSoftness,
