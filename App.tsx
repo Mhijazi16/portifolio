@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import Spline from '@splinetool/react-spline';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -13,6 +14,71 @@ import { useIntersectionObserver } from './hooks/useIntersectionObserver';
 // About component defined here for simplicity of the file structure requested
 const About: React.FC = () => {
   const [aboutRef, aboutVisible] = useIntersectionObserver();
+  const splineContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const dispatchFakeEvent = (x: number, y: number) => {
+      if (!splineContainerRef.current) return;
+      const canvas = splineContainerRef.current.querySelector('canvas');
+      if (!canvas) return;
+
+      const eventConfig = {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        clientX: x,
+        clientY: y,
+        screenX: x,
+        screenY: y,
+        pointerType: 'mouse', // Fake mouse to trigger hover effects even on mobile
+        isPrimary: true,
+        buttons: 0,
+      };
+
+      const mouseEvent = new MouseEvent('mousemove', eventConfig);
+      const pointerEvent = new PointerEvent('pointermove', eventConfig);
+
+      canvas.dispatchEvent(mouseEvent);
+      canvas.dispatchEvent(pointerEvent);
+    };
+
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      // If the event targets the canvas directly, let it pass (unless we need to override)
+      // but here we just want to catch events OUTSIDE the canvas.
+      if (!splineContainerRef.current) return;
+      const canvas = splineContainerRef.current.querySelector('canvas');
+      if (canvas && e.target === canvas) return;
+
+      dispatchFakeEvent(e.clientX, e.clientY);
+    };
+
+    const handleScroll = () => {
+      // Only trigger synthetic scroll-based movement on touch devices
+      // or if no mouse is present, to avoid fighting with the user's cursor.
+      const isTouch = window.matchMedia("(pointer: coarse)").matches;
+      if (!isTouch) return;
+
+      const scrollY = window.scrollY;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // Calculate a virtual cursor position based on scroll
+      // Creates a gentle figure-8 motion as you scroll
+      const x = width / 2 + Math.sin(scrollY * 0.003) * (width * 0.25);
+      const y = height / 2 + Math.cos(scrollY * 0.002) * (height * 0.15);
+
+      dispatchFakeEvent(x, y);
+    };
+
+    window.addEventListener('mousemove', handleGlobalMouseMove);
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <section id="about" className="py-24 bg-neutral-950/60">
       <div
@@ -21,13 +87,12 @@ const About: React.FC = () => {
           aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}
       >
-        <div className="relative">
+        <div ref={splineContainerRef} className="relative h-[500px] w-full">
            <div className="absolute inset-0 bg-white blur-[100px] opacity-10 rounded-full"></div>
-          <img 
-            src="https://picsum.photos/600/800" 
-            alt="Profile" 
-            className="relative z-10 rounded-2xl grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl border border-white/5 w-full object-cover h-[500px]"
-          />
+           <Spline
+             scene="https://prod.spline.design/UojikqYs-nRQsl0A/scene.splinecode" 
+             className="relative z-10 w-full h-full rounded-2xl border border-white/5 shadow-2xl"
+           />
         </div>
         <div>
           <BlurText
