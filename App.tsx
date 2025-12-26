@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import WorkExperience from './components/WorkExperience';
 import GithubHeatmap from './components/GithubHeatmap';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -100,9 +101,9 @@ const About: React.FC = () => {
             animateBy="letters"
             direction="top"
             delay={40}
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl font-bold text-white mb-6 justify-center md:justify-start"
           />
-          <div className="space-y-6 text-lg text-neutral-400 leading-relaxed">
+          <div className="space-y-6 text-lg text-neutral-400 leading-relaxed text-center md:text-left">
             <p>
               I'm Mohammed Hijazi, a software engineer who enjoys building clean, reliable systems that connect strong backends with thoughtful user interfaces.
             </p>
@@ -137,6 +138,7 @@ const App: React.FC = () => {
           <Hero />
           <About />
           <Skills />
+          <WorkExperience />
           <Projects />
           <GithubHeatmap />
           <Contact />

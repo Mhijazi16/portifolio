@@ -8,6 +8,8 @@ const skills: Skill[] = [
   { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Vite"] },
   { category: "AI & Agents", items: ["LangChain", "LangGraph", "Generative AI", "LLM Orchestration"] },
   { category: "Systems", items: ["C++", "Linux", "Docker", "CI/CD"] },
+  { category: "Mobile Development", items: ["React Native", "Expo", "iOS", "Android"] },
+  { category: "Data & ML", items: ["Pandas", "NumPy", "Scikit-learn", "SQL"] },
 ];
 
 const Skills: React.FC = () => {
@@ -16,20 +18,20 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-24 bg-black/40 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
+        <div className="mb-16 flex flex-col items-center text-center">
           <BlurText
             text="Technical Arsenal"
             animateBy="words"
             direction="top"
             delay={80}
-            className="text-3xl md:text-5xl font-bold text-white mb-6"
+            className="text-3xl md:text-5xl font-bold text-white mb-6 justify-center"
           />
           <div className="h-1 w-20 bg-white rounded-full"></div>
         </div>
 
         <div 
           ref={ref}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-[1600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-[1600ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           {skills.map((skill, idx) => (
             <div key={idx} className="glass-card p-6 rounded-2xl hover:bg-white/5 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(88,28,135,0.55)] hover:border-purple-500/40 transition-all duration-300">
