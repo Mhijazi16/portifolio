@@ -8,7 +8,6 @@ import WorkExperience from './components/WorkExperience';
 import GithubHeatmap from './components/GithubHeatmap';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import AIChat from './components/AIChat';
 import BlurText from './components/BlurText';
 import { useIntersectionObserver } from './hooks/useIntersectionObserver';
  
@@ -144,7 +143,6 @@ const App: React.FC = () => {
           <Contact />
         </main>
         <Footer />
-        <AIChat />
       </div>
     </div>
   );

@@ -85,9 +85,6 @@ const Projects: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-             <button className="text-white border-b border-white pb-1 hover:text-neutral-200 hover:border-neutral-200 transition-colors">View Github</button>
-        </div>
       </div>
 
       <Modal 

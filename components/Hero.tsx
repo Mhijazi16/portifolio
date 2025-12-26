@@ -94,6 +94,14 @@ const Hero: React.FC = () => {
             >
               Contact Me
             </button>
+            <a 
+              href="/images/resume.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+               className="px-8 py-3.5 bg-white/5 text-white font-medium rounded-full border border-white/20 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm w-full sm:w-auto"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </div>
