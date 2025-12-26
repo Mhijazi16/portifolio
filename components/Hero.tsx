@@ -2,10 +2,11 @@ import React from 'react';
 import GradientBlinds from './GradientBlinds';
 import BlurText from './BlurText';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
- 
+import heroData from '../data/hero.json';
+
 const Hero: React.FC = () => {
   const [heroRef, heroVisible] = useIntersectionObserver();
- 
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black/40 pt-28 pb-10">
 
@@ -39,7 +40,7 @@ const Hero: React.FC = () => {
           <div className="absolute -bottom-12 md:-bottom-14 rounded-3xl p-2 bg-black border border-white/5 shadow-2xl">
             <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10">
               <img 
-                src="/images/pic.jpeg" 
+                src={heroData.profileImage} 
                 alt="Profile" 
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
@@ -59,11 +60,11 @@ const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-50"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
             </span>
-            Available for hire
+            {heroData.availableText}
           </div>
           
           <BlurText
-            text="Architecting Digital"
+            text={heroData.heading1}
             animateBy="letters"
             direction="top"
             delay={80}
@@ -71,36 +72,36 @@ const Hero: React.FC = () => {
           />
           
           <BlurText
-            text="Excellence"
+            text={heroData.heading2}
             animateBy="letters"
             direction="top"
             delay={80}
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight text-center justify-center"
           />
           <p className="text-lg text-neutral-400 max-w-xl mx-auto mb-10 leading-relaxed">
-            I am a Software Engineer focused on FastAPI, React, and AI-powered systems, building reliable experiences across the stack.
+            {heroData.subtext}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button 
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById(heroData.buttons.viewWork.targetId)?.scrollIntoView({ behavior: 'smooth' })}
                className="group relative px-8 py-3.5 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto overflow-hidden"
             >
-              <span className="relative z-10">View Work</span>
+              <span className="relative z-10">{heroData.buttons.viewWork.text}</span>
             </button>
             <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById(heroData.buttons.contact.targetId)?.scrollIntoView({ behavior: 'smooth' })}
                className="px-8 py-3.5 bg-white/5 text-white font-medium rounded-full border border-white/20 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm w-full sm:w-auto"
             >
-              Contact Me
+              {heroData.buttons.contact.text}
             </button>
             <a 
-              href="/images/resume.pdf" 
+              href={heroData.buttons.resume.url}
               target="_blank"
               rel="noopener noreferrer"
                className="px-8 py-3.5 bg-white/5 text-white font-medium rounded-full border border-white/20 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm w-full sm:w-auto"
             >
-              Resume
+              {heroData.buttons.resume.text}
             </a>
           </div>
         </div>

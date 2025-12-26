@@ -2,25 +2,18 @@ import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Skill } from '../types';
 import BlurText from './BlurText';
-
-const skills: Skill[] = [
-  { category: "Backend & APIs", items: ["FastAPI", "Python", "REST APIs", "PostgreSQL", "Redis"] },
-  { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Vite"] },
-  { category: "AI & Agents", items: ["LangChain", "LangGraph", "Generative AI", "LLM Orchestration"] },
-  { category: "Systems", items: ["C++", "Linux", "Docker", "CI/CD"] },
-  { category: "Mobile Development", items: ["React Native", "Expo", "iOS", "Android"] },
-  { category: "Data & ML", items: ["Pandas", "NumPy", "Scikit-learn", "SQL"] },
-];
+import skillsData from '../data/skills.json';
 
 const Skills: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver();
+  const skills: Skill[] = skillsData.skills;
 
   return (
     <section id="skills" className="py-24 bg-black/40 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 flex flex-col items-center text-center">
           <BlurText
-            text="Technical Arsenal"
+            text={skillsData.title}
             animateBy="words"
             direction="top"
             delay={80}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import BlurText from './BlurText';
+import contactData from '../data/contact.json';
 
 const GithubHeatmap: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.15 });
@@ -11,18 +12,18 @@ const GithubHeatmap: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <BlurText
-              text="GitHub Contributions"
+              text={contactData.heatmap.title}
               animateBy="words"
               direction="top"
               delay={90}
               className="text-3xl md:text-5xl font-bold text-white mb-4"
             />
             <p className="text-neutral-400 max-w-xl">
-              A snapshot of my recent open-source and coding activity on GitHub.
+              {contactData.heatmap.description}
             </p>
           </div>
           <a
-            href="https://github.com/mhijazi16"
+            href={contactData.footer.links.github}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm text-neutral-300 border-b border-neutral-500/70 hover:text-white hover:border-white transition-all duration-300"
@@ -57,8 +58,8 @@ const GithubHeatmap: React.FC = () => {
               Last 1 year of activity
             </p>
             <img
-              src="https://ghchart.rshah.org/8b5cf6/mhijazi16"
-              alt="GitHub contributions heatmap for mhijazi16"
+              src={`https://ghchart.rshah.org/${contactData.heatmap.color}/${contactData.heatmap.username}`}
+              alt={`GitHub contributions heatmap for ${contactData.heatmap.username}`}
               className="w-full max-w-full h-auto opacity-95 hover:opacity-100 transition-opacity duration-300"
               loading="lazy"
             />

@@ -3,48 +3,26 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Project } from '../types';
 import BlurText from './BlurText';
 import Modal from './Modal';
-
-const workExperiences: Project[] = [
-  {
-    id: 'w1',
-    title: 'Senior Engineer at TechCorp',
-    description: 'Led the migration of legacy monoliths to microservices, improving system scalability by 300%. Mentored junior developers and established CI/CD best practices.',
-    tags: ['Microservices', 'AWS', 'System Design'],
-    image: 'https://picsum.photos/800/600?random=10'
-  },
-  {
-    id: 'w2',
-    title: 'Full Stack Dev at StartupAI',
-    description: 'Developed key features for an AI-powered marketing platform. Integrated LLMs for content generation and optimized React frontend performance.',
-    tags: ['React', 'Python', 'OpenAI API'],
-    image: 'https://picsum.photos/800/600?random=11'
-  },
-  {
-    id: 'w3',
-    title: 'Intern at InnovateSoft',
-    description: 'Collaborated with the product team to build a customer feedback portal. Implemented responsive UI components and RESTful API endpoints.',
-    tags: ['Vue.js', 'Node.js', 'PostgreSQL'],
-    image: 'https://picsum.photos/800/600?random=12'
-  }
-];
+import experienceData from '../data/experience.json';
 
 const WorkExperience: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
   const [selectedWork, setSelectedWork] = useState<Project | null>(null);
+  const workExperiences: Project[] = experienceData.experiences;
 
   return (
     <section id="work" className="py-24 bg-black/40">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <BlurText
-            text="Work Experience"
+            text={experienceData.title}
             animateBy="letters"
             direction="top"
             delay={50}
             className="text-3xl md:text-5xl font-bold text-white mb-4 justify-center"
           />
           <p className="text-neutral-400 max-w-xl mx-auto">
-            My professional journey contributing to impactful software solutions.
+            {experienceData.description}
           </p>
         </div>
 

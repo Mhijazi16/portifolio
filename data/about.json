@@ -1,0 +1,9 @@
+{
+  "title": "About Me",
+  "paragraphs": [
+    "I'm Mohammed Hijazi, a software engineer who enjoys building clean, reliable systems that connect strong backends with thoughtful user interfaces.",
+    "I work mainly with FastAPI, React, Python, and C++, and I love designing agents and tools with LangChain, LangGraph, and modern generative AI models.",
+    "Outside of coding, I'm usually tinkering with Linux setups, learning new tools, or exploring ideas around intelligent automation."
+  ],
+  "splineScene": "https://prod.spline.design/UojikqYs-nRQsl0A/scene.splinecode"
+}

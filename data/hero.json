@@ -1,0 +1,21 @@
+{
+  "heading1": "Architecting Digital",
+  "heading2": "Excellence",
+  "subtext": "I am a Software Engineer focused on FastAPI, React, and AI-powered systems, building reliable experiences across the stack.",
+  "availableText": "Available for hire",
+  "buttons": {
+    "viewWork": {
+      "text": "View Work",
+      "targetId": "projects"
+    },
+    "contact": {
+      "text": "Contact Me",
+      "targetId": "contact"
+    },
+    "resume": {
+      "text": "Resume",
+      "url": "/images/resume.pdf"
+    }
+  },
+  "profileImage": "/images/pic.jpeg"
+}

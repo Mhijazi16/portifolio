@@ -1,0 +1,27 @@
+{
+  "title": "Work Experience",
+  "description": "My professional journey contributing to impactful software solutions.",
+  "experiences": [
+    {
+      "id": "w1",
+      "title": "Senior Engineer at TechCorp",
+      "description": "Led the migration of legacy monoliths to microservices, improving system scalability by 300%. Mentored junior developers and established CI/CD best practices.",
+      "tags": ["Microservices", "AWS", "System Design"],
+      "image": "https://picsum.photos/800/600?random=10"
+    },
+    {
+      "id": "w2",
+      "title": "Full Stack Dev at StartupAI",
+      "description": "Developed key features for an AI-powered marketing platform. Integrated LLMs for content generation and optimized React frontend performance.",
+      "tags": ["React", "Python", "OpenAI API"],
+      "image": "https://picsum.photos/800/600?random=11"
+    },
+    {
+      "id": "w3",
+      "title": "Intern at InnovateSoft",
+      "description": "Collaborated with the product team to build a customer feedback portal. Implemented responsive UI components and RESTful API endpoints.",
+      "tags": ["Vue.js", "Node.js", "PostgreSQL"],
+      "image": "https://picsum.photos/800/600?random=12"
+    }
+  ]
+}

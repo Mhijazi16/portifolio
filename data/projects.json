@@ -1,0 +1,29 @@
+{
+  "title": "Personal Projects",
+  "description": "A curated selection of projects that demonstrate my passion for performance, design, and user experience.",
+  "buttonText": "View Github",
+  "githubUrl": "https://github.com/Mhijazi16",
+  "projects": [
+    {
+      "id": "1",
+      "title": "Nebula Dashboard",
+      "description": "A high-performance real-time analytics dashboard processing millions of events per second. Built with React and Go.",
+      "tags": ["React", "Go", "WebSockets", "D3.js"],
+      "image": "https://picsum.photos/800/600?random=1"
+    },
+    {
+      "id": "2",
+      "title": "EcoTrack Mobile",
+      "description": "Award-winning mobile application helping users track their carbon footprint with AI-powered suggestions.",
+      "tags": ["React Native", "TensorFlow", "Node.js"],
+      "image": "https://picsum.photos/800/600?random=2"
+    },
+    {
+      "id": "3",
+      "title": "Aether Code Assistant",
+      "description": "An intelligent IDE plugin providing real-time code optimization suggestions using Gemini LLMs.",
+      "tags": ["TypeScript", "Gemini API", "VS Code"],
+      "image": "https://picsum.photos/800/600?random=3"
+    }
+  ]
+}

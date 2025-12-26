@@ -3,48 +3,26 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Project } from '../types';
 import BlurText from './BlurText';
 import Modal from './Modal';
-
-const projects: Project[] = [
-  {
-    id: '1',
-    title: 'Nebula Dashboard',
-    description: 'A high-performance real-time analytics dashboard processing millions of events per second. Built with React and Go.',
-    tags: ['React', 'Go', 'WebSockets', 'D3.js'],
-    image: 'https://picsum.photos/800/600?random=1'
-  },
-  {
-    id: '2',
-    title: 'EcoTrack Mobile',
-    description: 'Award-winning mobile application helping users track their carbon footprint with AI-powered suggestions.',
-    tags: ['React Native', 'TensorFlow', 'Node.js'],
-    image: 'https://picsum.photos/800/600?random=2'
-  },
-  {
-    id: '3',
-    title: 'Aether Code Assistant',
-    description: 'An intelligent IDE plugin providing real-time code optimization suggestions using Gemini LLMs.',
-    tags: ['TypeScript', 'Gemini API', 'VS Code'],
-    image: 'https://picsum.photos/800/600?random=3'
-  }
-];
+import projectsData from '../data/projects.json';
 
 const Projects: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const projects: Project[] = projectsData.projects;
 
   return (
     <section id="projects" className="py-24 bg-neutral-950/60">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <BlurText
-            text="Personal Projects"
+            text={projectsData.title}
             animateBy="letters"
             direction="top"
             delay={50}
             className="text-3xl md:text-5xl font-bold text-white mb-4 justify-center"
           />
           <p className="text-neutral-400 max-w-xl mx-auto">
-            A curated selection of projects that demonstrate my passion for performance, design, and user experience.
+            {projectsData.description}
           </p>
         </div>
 
@@ -85,6 +63,11 @@ const Projects: React.FC = () => {
           ))}
         </div>
         
+        <div className="mt-12 text-center">
+             <button className="text-white border-b border-white pb-1 hover:text-neutral-200 hover:border-neutral-200 transition-colors">
+               <a href={projectsData.githubUrl} target="_blank" rel="noreferrer">{projectsData.buttonText}</a>
+             </button>
+        </div>
       </div>
 
       <Modal 

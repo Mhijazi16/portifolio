@@ -1,0 +1,29 @@
+{
+  "title": "Technical Arsenal",
+  "skills": [
+    { 
+      "category": "Backend & APIs", 
+      "items": ["FastAPI", "Python", "REST APIs", "PostgreSQL", "Redis"] 
+    },
+    { 
+      "category": "Frontend", 
+      "items": ["React", "TypeScript", "Tailwind CSS", "Vite"] 
+    },
+    { 
+      "category": "AI & Agents", 
+      "items": ["LangChain", "LangGraph", "Generative AI", "LLM Orchestration"] 
+    },
+    { 
+      "category": "Systems", 
+      "items": ["C++", "Linux", "Docker", "CI/CD"] 
+    },
+    { 
+      "category": "Mobile Development", 
+      "items": ["React Native", "Expo", "iOS", "Android"] 
+    },
+    { 
+      "category": "Data & ML", 
+      "items": ["Pandas", "NumPy", "Scikit-learn", "SQL"] 
+    }
+  ]
+}

@@ -10,7 +10,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BlurText from './components/BlurText';
 import { useIntersectionObserver } from './hooks/useIntersectionObserver';
- 
+import aboutData from './data/about.json';
+
 // About component defined here for simplicity of the file structure requested
 const About: React.FC = () => {
   const [aboutRef, aboutVisible] = useIntersectionObserver();
@@ -90,28 +91,22 @@ const About: React.FC = () => {
         <div ref={splineContainerRef} className="relative h-[500px] w-full">
            <div className="absolute inset-0 bg-white blur-[100px] opacity-10 rounded-full"></div>
            <Spline
-             scene="https://prod.spline.design/UojikqYs-nRQsl0A/scene.splinecode" 
+             scene={aboutData.splineScene}
              className="relative z-10 w-full h-full rounded-2xl border border-white/5 shadow-2xl"
            />
         </div>
         <div>
           <BlurText
-            text="About Me"
+            text={aboutData.title}
             animateBy="letters"
             direction="top"
             delay={40}
             className="text-3xl md:text-4xl font-bold text-white mb-6 justify-center md:justify-start"
           />
           <div className="space-y-6 text-lg text-neutral-400 leading-relaxed text-center md:text-left">
-            <p>
-              I'm Mohammed Hijazi, a software engineer who enjoys building clean, reliable systems that connect strong backends with thoughtful user interfaces.
-            </p>
-            <p>
-              I work mainly with FastAPI, React, Python, and C++, and I love designing agents and tools with LangChain, LangGraph, and modern generative AI models.
-            </p>
-            <p>
-              Outside of coding, I'm usually tinkering with Linux setups, learning new tools, or exploring ideas around intelligent automation.
-            </p>
+            {aboutData.paragraphs.map((para, index) => (
+              <p key={index}>{para}</p>
+            ))}
           </div>
         </div>
       </div>

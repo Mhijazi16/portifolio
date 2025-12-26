@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "title": "Let's build something extraordinary.",
+    "text": "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    "email": "m4hijaziii@gmail.com",
+    "whatsapp": {
+      "number": "+972597053900",
+      "link": "https://wa.me/972597053900"
+    },
+    "buttons": {
+      "email": "Say Hello",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "footer": {
+    "copyright": "Mohammed Hijazi. All rights reserved.",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/mhijazi16/",
+      "github": "https://github.com/Mhijazi16",
+      "phone": "+970 597 053 900",
+      "phoneLink": "tel:+970597053900"
+    }
+  },
+  "heatmap": {
+    "title": "GitHub Contributions",
+    "description": "A snapshot of my recent open-source and coding activity on GitHub.",
+    "username": "mhijazi16",
+    "color": "8b5cf6"
+  }
+}
