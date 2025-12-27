@@ -100,7 +100,7 @@ const About: React.FC = () => {
             text={aboutData.title}
             animateBy="letters"
             direction="top"
-            delay={40}
+            delay={50}
             className="text-3xl md:text-4xl font-bold text-white mb-6 justify-center md:justify-start"
           />
           <div className="space-y-6 text-lg text-neutral-400 leading-relaxed text-center md:text-left">

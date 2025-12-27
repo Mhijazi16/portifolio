@@ -1,27 +1,41 @@
 {
   "title": "Work Experience",
-  "description": "My professional journey contributing to impactful software solutions.",
+  "description": "My professional journey leading AI initiatives and engineering scalable systems.",
   "experiences": [
     {
       "id": "w1",
-      "title": "Senior Engineer at TechCorp",
-      "description": "Led the migration of legacy monoliths to microservices, improving system scalability by 300%. Mentored junior developers and established CI/CD best practices.",
-      "tags": ["Microservices", "AWS", "System Design"],
-      "image": "https://picsum.photos/800/600?random=10"
+      "title": "Lead AI Engineer at Sol",
+      "description": "Leading and growing the engineering team to deliver generative AI products. Maintaining and improving existing software products to ensure reliability and performance.",
+      "tags": ["Generative AI", "Leadership", "Software Engineering"],
+      "image": "/images/sol.jpg"
     },
     {
       "id": "w2",
-      "title": "Full Stack Dev at StartupAI",
-      "description": "Developed key features for an AI-powered marketing platform. Integrated LLMs for content generation and optimized React frontend performance.",
-      "tags": ["React", "Python", "OpenAI API"],
-      "image": "https://picsum.photos/800/600?random=11"
+      "title": "AI Engineer at Reveno",
+      "description": "Built an AI Avatar Interviewer that joins meetings and starts questioning and interviewing the participants.",
+      "tags": ["AI Agents", "Video Conferencing", "Python"],
+      "image": "/images/reveno.png"
     },
     {
       "id": "w3",
-      "title": "Intern at InnovateSoft",
-      "description": "Collaborated with the product team to build a customer feedback portal. Implemented responsive UI components and RESTful API endpoints.",
-      "tags": ["Vue.js", "Node.js", "PostgreSQL"],
-      "image": "https://picsum.photos/800/600?random=12"
+      "title": "Linux Systems Engineer at ColdRelay",
+      "description": "Automated Linux mail infrastructure deployments, reducing provisioning time from 2 hours to 15 minutes. Refactored system architecture for centralized monitoring and built event-driven systems using AWS.",
+      "tags": ["Linux", "AWS", "Automation", "Bash"],
+      "image": "/images/coldrelay.png"
+    },
+    {
+      "id": "w4",
+      "title": "Linux Systems Mentor at Mercy Corps (GSG)",
+      "description": "Mentored and guided over 40+ students in a Linux Fundamentals Bootcamp. Led a four-month intensive training program for BZU university students.",
+      "tags": ["Mentorship", "Linux", "Education"],
+      "image": "/images/gsg.png"
+    },
+    {
+      "id": "w5",
+      "title": "Backend Intern at Foothill Technology Solutions",
+      "description": "Designed and implemented backend systems using ASP.NET, adhering to Domain-Driven Design principles. Wrote comprehensive unit and integration tests using XUnit.",
+      "tags": ["ASP.NET", "C#", "Backend", "DDD"],
+      "image": "/images/foothill.png"
     }
   ]
 }

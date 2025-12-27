@@ -15,7 +15,7 @@ const GithubHeatmap: React.FC = () => {
               text={contactData.heatmap.title}
               animateBy="words"
               direction="top"
-              delay={90}
+              delay={50}
               className="text-3xl md:text-5xl font-bold text-white mb-4"
             />
             <p className="text-neutral-400 max-w-xl">

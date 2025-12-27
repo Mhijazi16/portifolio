@@ -16,7 +16,7 @@ const Skills: React.FC = () => {
             text={skillsData.title}
             animateBy="words"
             direction="top"
-            delay={80}
+            delay={50}
             className="text-3xl md:text-5xl font-bold text-white mb-6 justify-center"
           />
           <div className="h-1 w-20 bg-white rounded-full"></div>

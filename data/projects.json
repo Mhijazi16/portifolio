@@ -1,29 +1,73 @@
 {
   "title": "Personal Projects",
-  "description": "A curated selection of projects that demonstrate my passion for performance, design, and user experience.",
-  "buttonText": "View Github",
-  "githubUrl": "https://github.com/Mhijazi16",
+  "description": "Innovative projects demonstrating expertise in AI agents, systems programming, and full-stack development.",
   "projects": [
     {
       "id": "1",
-      "title": "Nebula Dashboard",
-      "description": "A high-performance real-time analytics dashboard processing millions of events per second. Built with React and Go.",
-      "tags": ["React", "Go", "WebSockets", "D3.js"],
-      "image": "https://picsum.photos/800/600?random=1"
+      "title": "Autopilot",
+      "description": "AI Agents that complete system administrator task by executing commands on linux servers.",
+      "tags": ["Python", "LangGraph", "Ollama", "Linux"],
+      "image": "/images/autopilot.gif",
+      "mediaType": "image",
+      "features": [
+        "AI Agents that complete system adminstrator task by executing commands on linux servers."
+      ]
     },
     {
       "id": "2",
-      "title": "EcoTrack Mobile",
-      "description": "Award-winning mobile application helping users track their carbon footprint with AI-powered suggestions.",
-      "tags": ["React Native", "TensorFlow", "Node.js"],
-      "image": "https://picsum.photos/800/600?random=2"
+      "title": "Lastoria E-Menu",
+      "description": "Interactive resturant E-Menu with admin dashboard for dynamic content updates",
+      "tags": ["ReactJS", "Fastapi"],
+      "image": "/images/lastoria.mp4",
+      "mediaType": "video",
+      "features": [
+        "Interactive resturant E-Menu with admin dashboard for dynamic content updates"
+      ]
     },
+
     {
       "id": "3",
-      "title": "Aether Code Assistant",
-      "description": "An intelligent IDE plugin providing real-time code optimization suggestions using Gemini LLMs.",
-      "tags": ["TypeScript", "Gemini API", "VS Code"],
-      "image": "https://picsum.photos/800/600?random=3"
+      "title": "AI Avatar Interviewer",
+      "description": "AI Voice Agent that joins meetings and starts questioning and interviewing the participants.",
+      "tags": ["Python", "Pipecat", "AI Voice"],
+      "image": "/images/rev.mp4",
+      "mediaType": "video",
+      "features": [
+        "AI Voice Agent that joins meetings and starts questioning and interviewing the participants."
+      ]
+    },
+    {
+      "id": "4",
+      "title": "E-Commerce & Storage Management System",
+      "description": "storage system with order tracking and revenue insights",
+      "tags": ["ReactJS", "Fastapi", "PostgreSQL"],
+      "image": "/images/storage.mp4",
+      "mediaType": "video",
+      "features": [
+        "storage system with order tracking and revenue insights"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Sol.ps Landing Page",
+      "description": "A modern landing page for an AI Startup",
+      "tags": ["ReactJS"],
+      "image": "/images/landing.mp4",
+      "mediaType": "video",
+      "features": [
+        "A modern landing page for an AI Startup"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "AI Salesman",
+      "description": "An AI Salesman for furniture stores that helps customers visualize their ideal designs through natural dialogue and on-the-spot AI-generated furniture images.",
+      "tags": ["Python", "Pipecat", "AI Voice"],
+      "image": "/images/sale.gif",
+      "mediaType": "image",
+      "features": [
+        "An AI Salesman for furniture stores that helps customers visualize their ideal designs through natural dialogue and on-the-spot AI-generated furniture images."
+      ]
     }
   ]
 }

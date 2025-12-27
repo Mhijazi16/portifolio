@@ -2,28 +2,28 @@
   "title": "Technical Arsenal",
   "skills": [
     { 
-      "category": "Backend & APIs", 
-      "items": ["FastAPI", "Python", "REST APIs", "PostgreSQL", "Redis"] 
+      "category": "Backend Engineering", 
+      "items": ["Python", "C#", "ASP.NET", "FastAPI", "gRPC", "GraphQL", "REST"] 
+    },
+    { 
+      "category": "AI Engineering", 
+      "items": ["LangChain", "LangGraph", "LangSmith", "RAG", "Ollama", "LiveKit"] 
+    },
+    { 
+      "category": "Systems & DevOps", 
+      "items": ["Linux", "Bash", "AWS", "Docker", "Git", "CI/CD"] 
+    },
+    { 
+      "category": "Languages", 
+      "items": ["C++", "Python", "C#", "Bash", "JavaScript/TypeScript"] 
+    },
+    { 
+      "category": "Databases", 
+      "items": ["PostgreSQL", "Neo4j", "Redis", "MS SqlServer"] 
     },
     { 
       "category": "Frontend", 
       "items": ["React", "TypeScript", "Tailwind CSS", "Vite"] 
-    },
-    { 
-      "category": "AI & Agents", 
-      "items": ["LangChain", "LangGraph", "Generative AI", "LLM Orchestration"] 
-    },
-    { 
-      "category": "Systems", 
-      "items": ["C++", "Linux", "Docker", "CI/CD"] 
-    },
-    { 
-      "category": "Mobile Development", 
-      "items": ["React Native", "Expo", "iOS", "Android"] 
-    },
-    { 
-      "category": "Data & ML", 
-      "items": ["Pandas", "NumPy", "Scikit-learn", "SQL"] 
     }
   ]
 }

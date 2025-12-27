@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
             text={heroData.heading1}
             animateBy="letters"
             direction="top"
-            delay={80}
+            delay={50}
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight text-center justify-center"
           />
           
@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
             text={heroData.heading2}
             animateBy="letters"
             direction="top"
-            delay={80}
+            delay={50}
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight text-center justify-center"
           />
           <p className="text-lg text-neutral-400 max-w-xl mx-auto mb-10 leading-relaxed">

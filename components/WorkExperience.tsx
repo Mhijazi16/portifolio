@@ -77,7 +77,10 @@ const WorkExperience: React.FC = () => {
           />
           <div>
             <h4 className="text-lg font-semibold text-white mb-2">Role & Responsibilities</h4>
-            <p className="text-neutral-300 leading-relaxed">
+            {selectedWork?.duration && (
+              <p className="text-sm text-purple-400 mb-2 font-medium">{selectedWork.duration}</p>
+            )}
+            <p className="text-neutral-300 leading-relaxed mb-4">
               {selectedWork?.description}
             </p>
           </div>
@@ -90,14 +93,6 @@ const WorkExperience: React.FC = () => {
                 </span>
               ))}
             </div>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-2">Achievements</h4>
-            <ul className="list-disc list-inside text-neutral-300 space-y-1">
-              <li>Delivered features ahead of schedule</li>
-              <li>Reduced bug reports by 15% through improved testing</li>
-              <li>Collaborated with cross-functional teams to define product requirements</li>
-            </ul>
           </div>
         </div>
       </Modal>

@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
             text={contactData.contact.title}
             animateBy="words"
             direction="bottom"
-            delay={90}
+            delay={50}
             className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance justify-center"
           />
 

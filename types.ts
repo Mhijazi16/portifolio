@@ -4,7 +4,10 @@ export interface Project {
   description: string;
   tags: string[];
   image: string;
+  mediaType?: string;
   link?: string;
+  features?: string[];
+  duration?: string;
 }
 
 export interface Skill {
