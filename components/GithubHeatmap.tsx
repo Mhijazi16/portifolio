@@ -1,10 +1,12 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import BlurText from './BlurText';
+import { useLanguage } from '../LanguageContext';
 import contactData from '../data/contact.json';
 
 const GithubHeatmap: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.15 });
+  const { t } = useLanguage();
 
   return (
     <section id="github" className="py-24 bg-neutral-950/60 border-t border-neutral-900/60">
@@ -12,14 +14,14 @@ const GithubHeatmap: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <BlurText
-              text={contactData.heatmap.title}
+              text={t.heatmap.title}
               animateBy="words"
               direction="top"
               delay={50}
               className="text-3xl md:text-5xl font-bold text-white mb-4"
             />
             <p className="text-neutral-400 max-w-xl">
-              {contactData.heatmap.description}
+              {t.heatmap.description}
             </p>
           </div>
           <a
@@ -28,7 +30,7 @@ const GithubHeatmap: React.FC = () => {
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm text-neutral-300 border-b border-neutral-500/70 hover:text-white hover:border-white transition-all duration-300"
           >
-            View full profile
+            {t.heatmap.viewProfile}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -55,7 +57,7 @@ const GithubHeatmap: React.FC = () => {
         >
           <div className="inline-flex flex-col items-center gap-4 min-w-[320px]">
             <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
-              Last 1 year of activity
+              {t.heatmap.lastYear}
             </p>
             <img
               src={`https://ghchart.rshah.org/${contactData.heatmap.color}/${contactData.heatmap.username}`}
@@ -65,7 +67,7 @@ const GithubHeatmap: React.FC = () => {
             />
 
             <p className="text-[11px] text-neutral-500">
-              Generated from public GitHub contribution data.
+              {t.heatmap.generated}
             </p>
           </div>
         </div>

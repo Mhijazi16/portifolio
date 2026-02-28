@@ -1,11 +1,14 @@
 import React from 'react';
+import { useLanguage } from '../LanguageContext';
 import contactData from '../data/contact.json';
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-8 bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500 gap-4">
-        <p>© {new Date().getFullYear()} {contactData.footer.copyright}</p>
+        <p>&copy; {new Date().getFullYear()} {t.footer.copyright}</p>
         <div className="flex flex-wrap justify-center gap-6">
           <a href={contactData.footer.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
           <a href={contactData.footer.links.github} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>

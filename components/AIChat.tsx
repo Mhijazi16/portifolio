@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { sendMessageToGemini } from '../services/geminiService';
 import { ChatMessage } from '../types';
+import { useLanguage } from '../LanguageContext';
 
 const AIChat: React.FC = () => {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: "Hi! I'm Mohammed's AI assistant. Ask me anything about his work, projects, or skills." }
+    { role: 'model', text: t.chat.initialMessage }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -18,6 +20,11 @@ const AIChat: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages, isOpen]);
+
+  // Update initial message when language changes
+  useEffect(() => {
+    setMessages([{ role: 'model', text: t.chat.initialMessage }]);
+  }, [t.chat.initialMessage]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,8 +53,8 @@ const AIChat: React.FC = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" /></svg>
               </div>
               <div>
-                <h3 className="text-white font-medium text-sm">Portfolio Assistant</h3>
-                <p className="text-xs text-green-400">● Online</p>
+                <h3 className="text-white font-medium text-sm">{t.chat.title}</h3>
+                <p className="text-xs text-green-400">● {t.chat.online}</p>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-neutral-400 hover:text-white transition-colors">
@@ -59,10 +66,10 @@ const AIChat: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#1c1c1e]">
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div 
+                <div
                     className={`max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed ${
-                    msg.role === 'user' 
-                      ? 'bg-white text-black rounded-br-none' 
+                    msg.role === 'user'
+                      ? 'bg-white text-black rounded-br-none'
                       : 'bg-[#2c2c2e] text-neutral-200 rounded-bl-none'
                   }`}
                 >
@@ -89,10 +96,10 @@ const AIChat: React.FC = () => {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                 placeholder="Ask about my projects..."
+                 placeholder={t.chat.placeholder}
                  className="w-full bg-[#1c1c1e] text-white rounded-full py-3 px-4 pr-12 text-sm focus:outline-none focus:ring-1 focus:ring-white border border-white/5 placeholder-neutral-500"
               />
-              <button 
+              <button
                  type="submit"
                  disabled={!input.trim() || isLoading}
                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-white rounded-full text-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-neutral-200 transition-colors"

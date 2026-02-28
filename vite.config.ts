@@ -19,6 +19,21 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        // Optimize chunk size
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+          output: {
+            // Manual chunks for better code splitting
+            manualChunks: {
+              'spline': ['@splinetool/react-spline'],
+              'gemini': ['@google/genai'],
+            }
+          }
+        },
+        // Use esbuild for fast minification (Vite default)
+        minify: 'esbuild'
       }
     };
 });

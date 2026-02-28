@@ -1,29 +1,29 @@
 {
   "title": "Technical Arsenal",
   "skills": [
-    { 
-      "category": "Backend Engineering", 
-      "items": ["Python", "C#", "ASP.NET", "FastAPI", "gRPC", "GraphQL", "REST"] 
+    {
+      "category": "Backend Engineering",
+      "items": ["ASP.NET", "FastAPI", "gRPC", "GraphQL", "REST"]
     },
-    { 
-      "category": "AI Engineering", 
-      "items": ["LangChain", "LangGraph", "LangSmith", "RAG", "Ollama", "LiveKit"] 
+    {
+      "category": "AI Engineering",
+      "items": ["LangChain", "LangGraph", "LangSmith", "RAG", "Ollama", "LiveKit"]
     },
-    { 
-      "category": "Systems & DevOps", 
-      "items": ["Linux", "Bash", "AWS", "Docker", "Git", "CI/CD"] 
+    {
+      "category": "Infrastructure & DevOps",
+      "items": ["Linux", "Bash", "AWS", "Docker", "Git", "CI/CD"]
     },
-    { 
-      "category": "Languages", 
-      "items": ["C++", "Python", "C#", "Bash", "JavaScript/TypeScript"] 
+    {
+      "category": "Languages",
+      "items": ["C++", "Python", "C#", "Bash", "JavaScript/TypeScript", "Golang"]
     },
-    { 
-      "category": "Databases", 
-      "items": ["PostgreSQL", "Neo4j", "Redis", "MS SqlServer"] 
+    {
+      "category": "Databases",
+      "items": ["PostgreSQL", "Neo4j", "Redis", "MS SqlServer"]
     },
-    { 
-      "category": "Frontend", 
-      "items": ["React", "TypeScript", "Tailwind CSS", "Vite"] 
+    {
+      "category": "Frontend",
+      "items": ["React", "TypeScript", "Tailwind CSS", "Vite", "Bun"]
     }
   ]
 }
