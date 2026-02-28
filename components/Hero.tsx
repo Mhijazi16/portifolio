@@ -4,6 +4,7 @@ import BlurText from './BlurText';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useLanguage } from '../LanguageContext';
 import heroData from '../data/hero.json';
+import { getAssetPath } from '../utils/assetPath';
 
 const Hero: React.FC = () => {
   const [heroRef, heroVisible] = useIntersectionObserver();
@@ -42,7 +43,7 @@ const Hero: React.FC = () => {
           <div className="absolute -bottom-12 md:-bottom-14 rounded-3xl p-2 bg-black border border-white/5 shadow-2xl">
             <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10">
               <img
-                src={heroData.profileImage}
+                src={getAssetPath(heroData.profileImage)}
                 alt="Profile"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />

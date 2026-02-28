@@ -5,6 +5,7 @@ import BlurText from './BlurText';
 import Modal from './Modal';
 import { useLanguage } from '../LanguageContext';
 import experienceData from '../data/experience.json';
+import { getAssetPath } from '../utils/assetPath';
 
 const WorkExperience: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
@@ -43,7 +44,7 @@ const WorkExperience: React.FC = () => {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={work.image}
+                    src={getAssetPath(work.image)}
                     alt={translated?.title || work.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -76,7 +77,7 @@ const WorkExperience: React.FC = () => {
       >
         <div className="space-y-6">
           <img
-            src={selectedWork?.image}
+            src={selectedWork ? getAssetPath(selectedWork.image) : ''}
             alt={selectedWork ? (t.experience.items[selectedWork.id]?.title || selectedWork.title) : ''}
             className="w-full h-64 object-cover rounded-xl border border-white/10"
           />

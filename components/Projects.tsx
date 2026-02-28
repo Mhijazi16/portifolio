@@ -5,6 +5,7 @@ import BlurText from './BlurText';
 import Modal from './Modal';
 import { useLanguage } from '../LanguageContext';
 import projectsData from '../data/projects.json';
+import { getAssetPath } from '../utils/assetPath';
 
 const Projects: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
@@ -44,7 +45,7 @@ const Projects: React.FC = () => {
                 <div className="aspect-video overflow-hidden">
                   {project.mediaType === 'video' ? (
                     <video
-                      src={project.image}
+                      src={getAssetPath(project.image)}
                       autoPlay
                       loop
                       muted
@@ -53,7 +54,7 @@ const Projects: React.FC = () => {
                     />
                   ) : (
                     <img
-                      src={project.image}
+                      src={getAssetPath(project.image)}
                       alt={translated?.title || project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -94,7 +95,7 @@ const Projects: React.FC = () => {
         <div className="space-y-6">
           {selectedProject?.mediaType === 'video' ? (
             <video
-              src={selectedProject.image}
+              src={selectedProject ? getAssetPath(selectedProject.image) : ''}
               autoPlay
               loop
               muted
@@ -104,7 +105,7 @@ const Projects: React.FC = () => {
             />
           ) : (
             <img
-              src={selectedProject?.image}
+              src={selectedProject ? getAssetPath(selectedProject.image) : ''}
               alt={selectedProject ? (t.projects.items[selectedProject.id]?.title || selectedProject.title) : ''}
               className="w-full h-64 object-cover rounded-xl border border-white/10"
             />
