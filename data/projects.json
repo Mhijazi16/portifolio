@@ -7,7 +7,7 @@
       "title": "Autopilot",
       "description": "AI Agents that complete system administrator task by executing commands on linux servers.",
       "tags": ["Python", "LangGraph", "Ollama", "Linux"],
-      "image": "./images/autopilot.gif",
+      "image": "/images/autopilot.gif",
       "mediaType": "image",
       "features": [
         "AI Agents that complete system adminstrator task by executing commands on linux servers."
@@ -18,7 +18,7 @@
       "title": "Lastoria E-Menu",
       "description": "Interactive resturant E-Menu with admin dashboard for dynamic content updates",
       "tags": ["ReactJS", "Fastapi"],
-      "image": "./images/lastoria.mp4",
+      "image": "/images/lastoria.mp4",
       "mediaType": "video",
       "features": [
         "Interactive resturant E-Menu with admin dashboard for dynamic content updates"
@@ -30,7 +30,7 @@
       "title": "AI Avatar Interviewer",
       "description": "AI Voice Agent that joins meetings and starts questioning and interviewing the participants.",
       "tags": ["Python", "Pipecat", "AI Voice"],
-      "image": "./images/rev.mp4",
+      "image": "/images/rev.mp4",
       "mediaType": "video",
       "features": [
         "AI Voice Agent that joins meetings and starts questioning and interviewing the participants."
@@ -41,7 +41,7 @@
       "title": "E-Commerce & Storage Management System",
       "description": "storage system with order tracking and revenue insights",
       "tags": ["ReactJS", "Fastapi", "PostgreSQL"],
-      "image": "./images/storage.mp4",
+      "image": "/images/storage.mp4",
       "mediaType": "video",
       "features": [
         "storage system with order tracking and revenue insights"
@@ -52,7 +52,7 @@
       "title": "Sol.ps Landing Page",
       "description": "A modern landing page for an AI Startup",
       "tags": ["ReactJS"],
-      "image": "./images/landing.mp4",
+      "image": "/images/landing.mp4",
       "mediaType": "video",
       "features": [
         "A modern landing page for an AI Startup"
@@ -63,7 +63,7 @@
       "title": "AI Salesman",
       "description": "An AI Salesman for furniture stores that helps customers visualize their ideal designs through natural dialogue and on-the-spot AI-generated furniture images.",
       "tags": ["Python", "Pipecat", "AI Voice"],
-      "image": "./images/sale.gif",
+      "image": "/images/sale.gif",
       "mediaType": "image",
       "features": [
         "An AI Salesman for furniture stores that helps customers visualize their ideal designs through natural dialogue and on-the-spot AI-generated furniture images."

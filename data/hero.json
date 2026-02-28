@@ -14,8 +14,8 @@
     },
     "resume": {
       "text": "Resume",
-      "url": "./images/resume.pdf"
+      "url": "/images/resume.pdf"
     }
   },
-  "profileImage": "./images/pic.jpeg"
+  "profileImage": "/images/pic.jpeg"
 }
