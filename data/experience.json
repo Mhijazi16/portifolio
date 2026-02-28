@@ -4,38 +4,38 @@
   "experiences": [
     {
       "id": "w1",
-      "title": "Lead AI Engineer at Sol",
+      "title": "AI Engineer at Sol",
       "description": "Leading and growing the engineering team to deliver generative AI products. Maintaining and improving existing software products to ensure reliability and performance.",
       "tags": ["Generative AI", "Leadership", "Software Engineering"],
-      "image": "/images/sol.jpg"
+      "image": "./images/sol.jpg"
     },
     {
       "id": "w2",
       "title": "AI Engineer at Reveno",
       "description": "Built an AI Avatar Interviewer that joins meetings and starts questioning and interviewing the participants.",
       "tags": ["AI Agents", "Video Conferencing", "Python"],
-      "image": "/images/reveno.png"
+      "image": "./images/reveno.png"
     },
     {
       "id": "w3",
       "title": "Linux Systems Engineer at ColdRelay",
       "description": "Automated Linux mail infrastructure deployments, reducing provisioning time from 2 hours to 15 minutes. Refactored system architecture for centralized monitoring and built event-driven systems using AWS.",
       "tags": ["Linux", "AWS", "Automation", "Bash"],
-      "image": "/images/coldrelay.png"
+      "image": "./images/coldrelay.png"
     },
     {
       "id": "w4",
       "title": "Linux Systems Mentor at Mercy Corps (GSG)",
       "description": "Mentored and guided over 40+ students in a Linux Fundamentals Bootcamp. Led a four-month intensive training program for BZU university students.",
       "tags": ["Mentorship", "Linux", "Education"],
-      "image": "/images/gsg.png"
+      "image": "./images/gsg.png"
     },
     {
       "id": "w5",
       "title": "Backend Intern at Foothill Technology Solutions",
       "description": "Designed and implemented backend systems using ASP.NET, adhering to Domain-Driven Design principles. Wrote comprehensive unit and integration tests using XUnit.",
       "tags": ["ASP.NET", "C#", "Backend", "DDD"],
-      "image": "/images/foothill.png"
+      "image": "./images/foothill.png"
     }
   ]
 }

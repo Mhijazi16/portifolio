@@ -1,7 +1,7 @@
 {
   "heading1": "Architecting Digital",
   "heading2": "Excellence",
-  "subtext": "I am a Lead AI Engineer & Linux Systems Engineer focused on building generative AI products, robust backend systems, and automated infrastructure.",
+  "subtext": "I am an AI Engineer & Linux Systems Engineer focused on building generative AI products, robust backend systems, and automated infrastructure.",
   "availableText": "Available for hire",
   "buttons": {
     "viewWork": {
@@ -14,8 +14,8 @@
     },
     "resume": {
       "text": "Resume",
-      "url": "/images/resume.pdf"
+      "url": "./images/resume.pdf"
     }
   },
-  "profileImage": "/images/pic.jpeg"
+  "profileImage": "./images/pic.jpeg"
 }
